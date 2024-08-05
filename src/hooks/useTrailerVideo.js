@@ -8,7 +8,7 @@ const useTrailerVideo = (video_id) => {
     const getVideoById = async () => {
         const res = await fetch(`https://api.themoviedb.org/3/movie/${video_id}/videos`, API_OPTIONS);
         const data = await res.json();
-        const filteredData = data?.results?.filter((video) => video.type == "Trailer");
+        const filteredData = data?.results?.filter((video) => video.type === "Trailer");
         const trailer = filteredData.length ? filteredData[0] : data?.results[0];
         setTrailerYoutubeId(trailer.key);
     }

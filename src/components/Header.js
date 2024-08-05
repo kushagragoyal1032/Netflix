@@ -9,7 +9,7 @@ import { chnageLanguage } from '../utils/configSlice';
 
 const Header = () => {
     const user = useSelector((store) => store.user.userData);
-    const shogptsearch = useSelector((store) => store.gpt.showSearchView);
+    const showgptsearch = useSelector((store) => store.gpt.showSearchView);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleSignOut = () => {
@@ -30,13 +30,13 @@ const Header = () => {
         <div className='absolute bg-gradient-to-b from-black w-full z-10 justify-between flex'>
             <img className="h-10 m-6 ml-36" src='images/pngwing.com.png' alt='netflix' />
             {user && <div className='flex mr-20 my-auto'>
-                {shogptsearch && <select className='bg-black text-white' onChange={langHandler}>
+                {showgptsearch && <select className='bg-black text-white' onChange={langHandler}>
                     {LANGSELECTOR.map(lang => (
                         <option key={lang.identifire} value={lang.identifire} >{lang.name}</option>
                     ))}
                 </select>}
                 <img className="h-10 px-4" src={user?.photoURL} alt='user' />
-                <button className='bg-red-500 px-2 bg-gradient-to-tr text-white mr-3' onClick={handleSearch}>GPT Search</button>
+                <button className='bg-red-500 px-2 bg-gradient-to-tr text-white mr-3' onClick={handleSearch}>{showgptsearch ? "Home Page" : "GPT Search"}</button>
                 <button className='text-white font-bold p-2 px-3 bg-red-600' onClick={handleSignOut}>{("Sign Out")}</button>
             </div>}
         </div>
