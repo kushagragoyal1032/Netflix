@@ -29,17 +29,17 @@ const GptSearchBar = () => {
         //     console.log("error");
         // }
         const gptResults = ['Sholay', 'Dangal', 'Baahubali', '3 Idiots'];
-        // console.log(gptResults);
+        gptResults.unshift(searchText.current.value);
         const promiseList = gptResults.map((movie) => {
             return handleTmdbSearch(movie);
         })
         const movieObjectList = await Promise.all(promiseList);
-        console.log(movieObjectList);
+        // console.log(movieObjectList);
         dispatch(addGptMovies({ movies: gptResults, movieResult: movieObjectList }))
     }
     return (
-        <div className='pt-[10%] flex justify-center'>
-            <form className='bg-black bg-opacity-80 p-6 w-1/2 grid grid-cols-12' onSubmit={(e) => e.preventDefault()}>
+        <div className='pt-[10%] flex justify-center '>
+            <form className='bg-black bg-opacity-70 p-6 grid grid-cols-12 w-full mx-3 md:w-1/2 mx-0' onSubmit={(e) => e.preventDefault()}>
                 <input className='col-span-9 pl-2 rounded-sm border border-white-200 bg-gray-500 bg-opacity-60 text-white' type="text" placeholder={LANG?.[selectedLang]?.placeholder} ref={searchText} />
                 <button className='col-span-3 ml-4 py-3 px-4 bg-red-700 text-white rounded-md' onClick={handleGpt}>{LANG?.[selectedLang]?.search}</button>
             </form>

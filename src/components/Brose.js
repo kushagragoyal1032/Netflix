@@ -20,10 +20,10 @@ const Brose = () => {
         toggle ? (
           <GptSearch />
         ) : (
-          <>
+          <div className='pt-[32%] md:pt-0'>
             <MainContainor />
             <SecondaryContainor />
-          </>
+          </div>
         )
       }
     </div>

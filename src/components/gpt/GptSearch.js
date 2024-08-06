@@ -4,14 +4,15 @@ import GptSearchSuggestion from './GptSearchSuggestion'
 
 const GptSearch = () => {
   return (
-
-    <div>
+    <>
       <div className="bg-img fixed -z-10">
-        <img src="images/NetfixBackground.jpg" alt="bg" />
+        <img className="h-screen w-screen object-cover" src="images/NetfixBackground.jpg" alt="bg" />
       </div>
-      <GptSearchBar />
-      <GptSearchSuggestion />
-    </div>
+      <div className='pt-[50%] md:pt-0'>
+        <GptSearchBar />
+        <GptSearchSuggestion />
+      </div>
+    </>
   )
 }
 

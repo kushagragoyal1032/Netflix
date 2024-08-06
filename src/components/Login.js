@@ -63,9 +63,9 @@ const Login = () => {
         <div className='login'>
             <Header />
             <div className="bg-img absolute">
-                <img src="images/NetfixBackground.jpg" alt="bg" />
+                <img src="images/NetfixBackground.jpg" alt="bg" className='h-screen w-screen object-cover'/>
             </div>
-            <div className='absolute bg-black bg-opacity-80 p-8 w-3/12 mx-auto my-36 right-0 left-0  text-white'>
+            <div className='absolute bg-black bg-opacity-80 p-8 w-10/12 md:w-3/12  mx-auto my-36 right-0 left-0  text-white'>
                 <h2 className="font-bold text-white text-3xl">{signIn ? "Sign In" : "Sign Up"}</h2>
                 <form className='mt-5 flex flex-col rounded-md' onSubmit={(e) => e.preventDefault()}>
                     {!signIn && <input

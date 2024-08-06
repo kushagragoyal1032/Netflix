@@ -27,9 +27,9 @@ const Header = () => {
         dispatch(chnageLanguage(e.target.value));
     }
     return (
-        <div className='absolute bg-gradient-to-b from-black w-full z-10 justify-between flex'>
-            <img className="h-10 m-6 ml-36" src='images/pngwing.com.png' alt='netflix' />
-            {user && <div className='flex mr-20 my-auto'>
+        <div className='absolute bg-gradient-to-b from-black w-full p-2 z-10 justify-between flex flex-col mx-auto md:flex-row'>
+            <img className="h-10 m-6 md:ml-36 mx-auto md:mx-6" src='images/pngwing.com.png' alt='netflix' />
+            {user && <div className='flex my-auto justify-center md:mr-20'>
                 {showgptsearch && <select className='bg-black text-white' onChange={langHandler}>
                     {LANGSELECTOR.map(lang => (
                         <option key={lang.identifire} value={lang.identifire} >{lang.name}</option>
